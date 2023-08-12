@@ -18,7 +18,7 @@ const HELP_ITEMS = [
     text: 'GitHub Actions is an automation service (or CI / CD service) that helps you automate repository-related workflows and processes.',
   },
 ];
-
+//
 function HelpArea() {
   return (
     <section data-testid="help-area" id="help-area">
