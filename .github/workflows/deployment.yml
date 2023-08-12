@@ -4,6 +4,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: Output event data
+        uses: echo "${{ toJSON(github.event) }}"
       - name: Get code
         uses: actions/checkout@v3
       - name: Install NodeJS
@@ -13,23 +15,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run tests
-        run: npm test
-  deploy:
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-        - name: Get code
-          uses: actions/checkout@v3
-        - name: Install NodeJS
-          uses: actions/setup-node@v3
-          with: 
-              node-version: 18
-        - name: Install dependencies
-          run: npm ci
-        - name: Build projet
-          run: npm run build
-        - name: Deploy
-          run: echo "Deploying ..."
-        
+        run: npm run test
+      - name: Run tests
+        run: npm run build
+      - name: Deploy project
+        run: echo "Deploying ..."
         
     
