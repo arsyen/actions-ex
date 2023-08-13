@@ -2,9 +2,5 @@ name: Website Deploy
 on: push
 jobs:
   deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Deploy
-        uses: ./.github/workflows/reusable.yml
+    uses: ./.github/workflows/reusable.yml
+        
