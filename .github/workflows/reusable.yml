@@ -1,8 +1,22 @@
 name: Reusable Deploy
-on: [workflow_call, workflow_dispatch]
+on: 
+    workflow_dispatch:
+    workflow_call:
+        inputs:
+            param1:
+                description: first parameter
+                required: true
+                type: string
+            param2:
+                description: second parameter
+                required: true
+                type: string
+                
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Output information
-        run: echo "Deploying and uploading..."
+        run: |
+            echo "Deploying and uploading Param1 ${{ inputs.param1 }}"
+            echo "Deploying and uploading Param2 ${{ inputs.param2 }}"

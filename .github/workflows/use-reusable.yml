@@ -3,4 +3,7 @@ on: push
 jobs:
   deploy:
     uses: ./.github/workflows/reusable.yml
+    with: 
+      param1: 'my name'
+      param2: 'my age'
         
