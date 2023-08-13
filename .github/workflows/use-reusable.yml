@@ -2,4 +2,7 @@ name: Website Deploy
 on: push
 jobs:
   deploy:
-    uses: ./.github/workflows/reusable.yml
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        uses: ./.github/workflows/reusable.yml
