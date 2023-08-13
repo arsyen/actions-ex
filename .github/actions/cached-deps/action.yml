@@ -1,5 +1,5 @@
-name: Get and cache dependencies
-description: Gets and caches node dependencies
+name: 'Get and cache dependencies'
+description: 'Gets and caches node dependencies'
 runs:
   using: 'composite'
   steps:
