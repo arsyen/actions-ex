@@ -8,5 +8,5 @@ jobs:
       param2: 'my age'
     secrets:
       myusername: aaaa
-      password: bbbb
+      mypassword: bbbb
         
