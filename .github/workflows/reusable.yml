@@ -11,7 +11,13 @@ on:
                 description: second parameter
                 required: true
                 type: string
-                
+        secrets:
+            myusername:
+                description: db username
+                required: true
+            mypassword:
+                description: db password
+                required: true
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -20,3 +26,5 @@ jobs:
         run: |
             echo "Deploying and uploading Param1 ${{ inputs.param1 }}"
             echo "Deploying and uploading Param2 ${{ inputs.param2 }}"
+            echo "Deploying and uploading my username ${{ secrets.myusername }}"
+            echo "Deploying and uploading my password ${{ secrets.mypassword }}"
